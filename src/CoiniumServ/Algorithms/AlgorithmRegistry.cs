@@ -86,7 +86,7 @@ namespace CoiniumServ.Algorithms
             _applicationContext.Container.Register<IHashAlgorithm, Scrypt>(Scrypt).AsMultiInstance();
             _applicationContext.Container.Register<IHashAlgorithm, ScryptOg>(ScryptOg).AsMultiInstance();
             _applicationContext.Container.Register<IHashAlgorithm, ScryptN>(ScryptN).AsMultiInstance();
-            _applicationContext.Container.Register<IHashAlgorithm, NeoScryptWrapper>(NeoScrypt).AsMultiInstance();
+            _applicationContext.Container.Register<IHashAlgorithm, Implementations.NeoScrypt>(NeoScrypt).AsMultiInstance();
 
             // multi-hashers
             _applicationContext.Container.Register<IHashAlgorithm, X11>(X11).AsMultiInstance();

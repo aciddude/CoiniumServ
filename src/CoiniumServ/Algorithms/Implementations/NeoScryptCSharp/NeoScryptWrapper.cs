@@ -1,10 +1,9 @@
-/*
+﻿/*
  * Copyright (c) 2009 Colin Percival, 2011 ArtForz
  * Copyright (c) 2012 Andrew Moon (floodyberry)
  * Copyright (c) 2012 Samuel Neves <sneves@dei.uc.pt>
  * Copyright (c) 2014-2018 John Doering <ghostlander@phoenixcoin.org>
  * Copyright (c) 2018 C# Conversion by Mogwaicoin Team <mogwai@mogwaicoin.org>
- * Copyright (c) 2018 Coiniumserv Implimentation by AcidD <github.com/aciddude>
  * 
  * All rights reserved.
  *
@@ -31,9 +30,9 @@
  */
 using System.Text;
 
-namespace CoiniumServ.Algorithms.Implementations
+namespace NeoScrypt
 {
-    public sealed class NeoScryptWrapper : IHashAlgorithm
+    public class NeoScryptWrapper
     {
         public static void neoscrypt(string password, ref byte[] output, uint profile)
         {
