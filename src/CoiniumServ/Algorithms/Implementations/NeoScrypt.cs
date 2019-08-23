@@ -28,7 +28,11 @@
 #endregion
 
 using System;
+using System;
+using System.Text;
 using CryptSharp.Utility;
+using NeoScrypt;
+using Serilog;
 
 namespace CoiniumServ.Algorithms.Implementations
 {
@@ -36,31 +40,18 @@ namespace CoiniumServ.Algorithms.Implementations
     {
         public UInt32 Multiplier { get; private set; }
 
-        /// <summary>
-        /// N parameter - CPU/memory cost parameter.
-        /// </summary>
-        private readonly int _n;
-
-        /// <summary>
-        /// R parameter - block size.
-        /// </summary>
-        private readonly int _r;
-
-        /// <summary>
-        /// P - parallelization parameter -  a large value of p can increase computational 
-        /// cost of scrypt without increasing the memory usage.
-        /// </summary>
-        private readonly int _p;
-
         public NeoScrypt()
         {
             Multiplier = (UInt32) Math.Pow(2, 16);
             
         }
-
+        
+        
         public byte[] Hash(byte[] input)
         {
-            return SCrypt.ComputeDerivedKey(input, input, _n, _r, _p, null, 32);
+            byte[] output = new byte[32];
+            global::NeoScrypt.NeoScryptWrapper.neoscrypt(input.ToString(), ref output, 0);
+            return output;
         }
     }
 }
