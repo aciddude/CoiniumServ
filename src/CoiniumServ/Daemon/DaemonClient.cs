@@ -268,7 +268,7 @@ namespace CoiniumServ.Daemon
                 data.Add("mode", "template");
             }
             
-            data.Add("rules", new[] {"segwit", "csv"});
+            data.Add("rules", new[] {""});
 
             return MakeRequest<BlockTemplate>("getblocktemplate", data);
         }
