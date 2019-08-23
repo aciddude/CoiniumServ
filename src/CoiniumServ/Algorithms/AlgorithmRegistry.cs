@@ -47,6 +47,7 @@ namespace CoiniumServ.Algorithms
         public const string Scrypt = "scrypt";
         public const string ScryptOg = "scrypt-og";
         public const string ScryptN = "scrypt-n";
+        public const string NeoScrypt = "neoscrypt";
         public const string Sha1 = "sha1";
         public const string Sha256 = "sha256";
         public const string Shavite3 = "shavite3";
@@ -85,6 +86,7 @@ namespace CoiniumServ.Algorithms
             _applicationContext.Container.Register<IHashAlgorithm, Scrypt>(Scrypt).AsMultiInstance();
             _applicationContext.Container.Register<IHashAlgorithm, ScryptOg>(ScryptOg).AsMultiInstance();
             _applicationContext.Container.Register<IHashAlgorithm, ScryptN>(ScryptN).AsMultiInstance();
+            _applicationContext.Container.Register<IHashAlgorithm, NeoScryptWrapper>(NeoScrypt).AsMultiInstance();
 
             // multi-hashers
             _applicationContext.Container.Register<IHashAlgorithm, X11>(X11).AsMultiInstance();
